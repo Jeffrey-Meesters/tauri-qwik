@@ -15,6 +15,7 @@
     "build": "qwik build",
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
+    "build.server": "vite build -c adapters/static/vite.config.ts",
     "build.types": "tsc --incremental --noEmit",
     "deploy": "echo 'Run \"npm run qwik add\" to install a server adapter'",
     "dev": "vite --mode ssr",
@@ -24,11 +25,13 @@
     "lint": "eslint \"src/**/*.ts*\"",
     "preview": "qwik build preview && vite preview --open",
     "start": "vite --open --mode ssr",
+    "tauri": "tauri",
     "qwik": "qwik"
   },
   "devDependencies": {
     "@builder.io/qwik": "^1.5.5",
     "@builder.io/qwik-city": "^1.5.5",
+    "@tauri-apps/cli": "^1.5.14",
     "@types/eslint": "^8.56.10",
     "@types/node": "^20.12.7",
     "@typescript-eslint/eslint-plugin": "^7.7.1",

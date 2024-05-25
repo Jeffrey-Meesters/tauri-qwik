@@ -23,14 +23,16 @@ export const useServerTimeLoader = routeLoader$(() => {
 
 export default component$(() => {
   useStyles$(styles);
+  const time = useServerTimeLoader();
+  const date = time.value.date;
   return (
     <>
       <header>
-        <div class='logo'>Budgy</div>
+        <div class='logo'>Budgy {date}</div>
         <nav>
           <ul>
             <li class='updates'>
-              <a href='#'>Updates</a>
+              <a href='#'>Log in</a>
             </li>
             <li class='dashboard'>
               <a href='#'>Dashboard</a>

@@ -66,17 +66,20 @@ h6 {
 
 main {
   display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
   height: 100vh;
   width: 100vw;
   background: linear-gradient(to right, #f7971e, #ffd200);
   background-color: #000;
   color: #fff;
+  padding-bottom: 1.5rem;
 }
 
 .hero {
   display: grid;
   background-color: #fff;
-  height: 50vh;
+  height: 100%;
   width: 100%;
   color: #f7971e;
   place-items: center;
@@ -85,6 +88,7 @@ main {
 .hero h1 {
   font-size: 6rem;
   background: linear-gradient(to left, #f7971e, #ffd200);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   align-self: end;
@@ -96,7 +100,33 @@ main {
 
 main .main {
   display: grid;
+  gap: 1.5rem;
   grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+}
+
+.article-card {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+hr {
+  width: 100%;
+  border: 1px solid white;
+  margin: 5px 0;
+}
+
+.article-card:nth-child(1) {
+  grid-column: 2 / 3;
+}
+.article-card:nth-child(2) {
+  grid-column: 3 / 4;
+}
+.article-card:nth-child(3) {
+  grid-column: 2 / 4;
 }
 
 .logo {

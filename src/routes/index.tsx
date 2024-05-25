@@ -11,15 +11,30 @@ export default component$(() => {
       <section class='main'>
         <article class='article-card'>
           <h3>Gain insight</h3>
-          <p>some text here</p>
+          <hr />
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
+            saepe assumenda ipsum, eaque iure commodi ea atque, rerum odio nobis
+            ipsa, at fuga reiciendis quam ullam mollitia a quas corporis.
+          </p>
         </article>
         <article class='article-card'>
           <h3>See progress</h3>
-          <p>some text here</p>
+          <hr />
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
+            saepe assumenda ipsum, eaque iure commodi ea atque, rerum odio nobis
+            ipsa, at fuga reiciendis quam ullam mollitia a quas corporis.
+          </p>
         </article>
         <article class='article-card'>
           <h3>Track expenses</h3>
-          <p>some text here</p>
+          <hr />
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
+            saepe assumenda ipsum, eaque iure commodi ea atque, rerum odio nobis
+            ipsa, at fuga reiciendis quam ullam mollitia a quas corporis.
+          </p>
         </article>
       </section>
     </>

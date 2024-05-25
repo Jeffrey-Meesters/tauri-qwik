@@ -1,5 +1,6 @@
 import { component$ } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
+import Image from '../media/laptoptWithDiagrams.jpg?jsx';
 
 export default component$(() => {
   return (
@@ -9,6 +10,10 @@ export default component$(() => {
         <h2>Your companion to financial insight</h2>
       </section>
       <section class='main'>
+        <Image class='first-image' />
+        {/* Photo by <a href="https://unsplash.com/@kmuza?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Carlos Muza</a> on <a href="https://unsplash.com/photos/laptop-computer-on-glass-top-table-hpjSkU2UYSU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a> */}
+        <Image class='second-image' />
+        {/* Photo by <a href="https://unsplash.com/@kmuza?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Carlos Muza</a> on <a href="https://unsplash.com/photos/laptop-computer-on-glass-top-table-hpjSkU2UYSU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a> */}
         <article class='article-card'>
           <h3>Gain insight</h3>
           <hr />

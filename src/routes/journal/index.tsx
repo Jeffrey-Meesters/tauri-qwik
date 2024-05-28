@@ -41,17 +41,24 @@ export default component$(() => {
 
   const handleSubmit = $((e: MouseEvent) => {
     e.preventDefault();
-    console.log('hi', (e.target as HTMLInputElement).form?.amount.value);
+    console.log(
+      'hi',
+      (e.target as HTMLInputElement).form?.amount.valueAsNumber
+    );
     console.log('hi2', (e.target as HTMLInputElement).form?.category.value);
-    console.log(Math.sign((e.target as HTMLInputElement).form.amount.value));
+    console.log(
+      Math.sign((e.target as HTMLInputElement).form.amount.valueAsNumber)
+    );
     mutationData.push({
       id: Math.random() * 100,
       category: (e.target as HTMLInputElement).form?.category.value,
-      amount: (e.target as HTMLInputElement).form.amount.value,
+      amount: (e.target as HTMLInputElement).form.amount.valueAsNumber,
       mutationType:
-        Math.sign((e.target as HTMLInputElement).form.amount.value) < 1
+        Math.sign((e.target as HTMLInputElement).form.amount.valueAsNumber) < 1
           ? 'negative'
-          : Math.sign((e.target as HTMLInputElement).form.amount.value) === 1
+          : Math.sign(
+                (e.target as HTMLInputElement).form.amount.valueAsNumber
+              ) === 1
             ? 'positive'
             : '',
     });

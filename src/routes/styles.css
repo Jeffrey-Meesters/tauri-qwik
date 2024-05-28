@@ -24,7 +24,6 @@ header {
       grid-template-areas: 'updates dashboard';
       column-gap: 15px;
       justify-items: end;
-      list-style: none;
     }
   }
 }

@@ -1,0 +1,14 @@
+header {
+  position: relative;
+}
+
+.page {
+  padding: 1.5rem;
+
+  .positive {
+    color: aquamarine;
+  }
+  .negative {
+    color: crimson;
+  }
+}

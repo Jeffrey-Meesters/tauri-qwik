@@ -103,4 +103,8 @@ h6 {
   isolation: isolate;
 }
 
+ul {
+  list-style: none;
+}
+
 /* end reset */

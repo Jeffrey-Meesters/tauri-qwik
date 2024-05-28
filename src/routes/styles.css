@@ -11,6 +11,9 @@ header {
 
   .logo {
     grid-area: logo;
+    font-weight: bolder;
+    font-size: 1.6rem;
+    letter-spacing: -0.6px;
   }
 
   nav {

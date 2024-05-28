@@ -48,6 +48,18 @@ npm start # or `yarn start`
 
 > Note: during dev mode, Vite may request a significant number of `.js` files. This does not represent a Qwik production build.
 
+### _Tauri_
+
+This application uses Tauri to create a desktop application. To run that in development use the following command:
+
+```shell
+npm run tauri dev
+```
+
+It wil first startup Tauri to bundle the Qwik application and then automatically run the `dev` command to startup vite in ssr mode.
+
+The HotModule Reload will also be enabled for the desktop application and is just as quick as you're used to.
+
 ## Preview
 
 The preview command will create a production build of the client modules, a production build of `src/entry.preview.tsx`, and run a local server. The preview server is only for convenience to preview a production build locally and should not be used as a production server.

@@ -27,6 +27,9 @@
   grid-template-columns: 10% 1fr 1fr 10%;
   justify-items: center;
   grid-auto-rows: min-content;
+  background: linear-gradient(to right, #f7971e, #ffd200);
+  background-color: #000;
+  color: #fff;
 
   h3 {
     font-weight: bolder;

@@ -1,6 +1,13 @@
-import { component$, useStyles$, useStore, $ } from '@builder.io/qwik';
+import {
+  component$,
+  createContextId,
+  useContextProvider,
+  useStore,
+  useStyles$,
+} from '@builder.io/qwik';
 import styles from './journal.css?inline';
 
+import { AddMutationForm } from '~/components/journal/addMutationForm';
 import { Item } from '../../components/journal/mutationListItem';
 
 type MutationListItemProps = {
@@ -8,7 +15,11 @@ type MutationListItemProps = {
   amount: number;
   category: string;
   mutationType: 'negative' | 'positive' | '';
+  budgetTopic: string;
 }[];
+
+export const mutationDataCI =
+  createContextId<MutationListItemProps>('mutationData');
 
 export default component$(() => {
   useStyles$(styles);
@@ -17,59 +28,42 @@ export default component$(() => {
     {
       id: 1,
       amount: 600,
-      category: 'something',
+      category: 'Salery',
       mutationType: 'positive',
+      budgetTopic: 'Income',
     },
     {
       id: 2,
       amount: -300,
-      category: 'something',
+      category: 'Painting',
       mutationType: 'negative',
+      budgetTopic: 'house',
     },
     {
       id: 3,
       amount: -303,
-      category: 'something',
+      category: 'Various',
       mutationType: 'negative',
+      budgetTopic: 'house',
     },
   ]);
+
+  useContextProvider(mutationDataCI, mutationData);
 
   const saldo = mutationData.reduce(
     (accumulator, currentValue) => accumulator + currentValue.amount,
     0
   );
 
-  const handleSubmit = $((e: MouseEvent) => {
-    e.preventDefault();
-    console.log(
-      'hi',
-      (e.target as HTMLInputElement).form?.amount.valueAsNumber
-    );
-    console.log('hi2', (e.target as HTMLInputElement).form?.category.value);
-    console.log(
-      Math.sign((e.target as HTMLInputElement).form.amount.valueAsNumber)
-    );
-    mutationData.push({
-      id: Math.random() * 100,
-      category: (e.target as HTMLInputElement).form?.category.value,
-      amount: (e.target as HTMLInputElement).form.amount.valueAsNumber,
-      mutationType:
-        Math.sign((e.target as HTMLInputElement).form.amount.valueAsNumber) < 1
-          ? 'negative'
-          : Math.sign(
-                (e.target as HTMLInputElement).form.amount.valueAsNumber
-              ) === 1
-            ? 'positive'
-            : '',
-    });
-  });
-
   return (
     <div class='page'>
-      <div>
+      <section>
         <h1>Journal</h1>
-        <button>Add mutation</button>
-      </div>
+        <button>Add budget</button>
+      </section>
+      <section>
+        <AddMutationForm />
+      </section>
       <section>
         <h2 class={saldo < 0 ? 'negative' : saldo > 0 ? 'positive' : ''}>
           Saldo: {saldo}
@@ -80,24 +74,6 @@ export default component$(() => {
         <ul>
           <Item mutationData={mutationData} />
         </ul>
-      </section>
-      <section>
-        <form>
-          <label>
-            Amount
-            <input name='amount' type='number' />
-          </label>
-          <label>
-            Category
-            <select name='category'>
-              <option value='food'>Food</option>
-              <option value='mortgage'>Mortgage</option>
-            </select>
-          </label>
-          <button preventdefault:click onClick$={handleSubmit}>
-            Add mutation
-          </button>
-        </form>
       </section>
     </div>
   );

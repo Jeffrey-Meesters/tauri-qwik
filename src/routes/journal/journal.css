@@ -4,11 +4,48 @@ header {
 
 .page {
   padding: 1.5rem;
+  color: #444;
 
-  .positive {
-    color: aquamarine;
-  }
-  .negative {
-    color: crimson;
+  .mutation {
+    max-width: 320px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    padding: 1.5rem 1.5rem 1.5rem 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    .item-amount {
+      justify-self: end;
+    }
+
+    .item-info {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 2;
+
+      .topic {
+        grid-column: 1;
+        grid-row: 2;
+        font-size: 11px;
+        color: rgb(180, 180, 180);
+      }
+
+      .category {
+        grid-column: 1;
+        grid-row: 1;
+      }
+    }
+
+    &.positive {
+      .item-amount {
+        color: cadetblue;
+      }
+    }
+
+    &.negative {
+      .item-amount {
+        color: crimson;
+      }
+    }
   }
 }
